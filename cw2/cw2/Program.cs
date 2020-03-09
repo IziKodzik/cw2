@@ -22,6 +22,12 @@ namespace cw2
                 {
                     string[] studentWiersz = line.Split(",");
                     Console.WriteLine(line);
+                    var stu = new Student
+                    {
+                        Imie = studentWiersz[0],
+                        Nazwisko = studentWiersz[0],
+                        Email = studentWiersz[0]
+                    };
                 }
             }
 
@@ -30,6 +36,7 @@ namespace cw2
                                             new XmlRootAttribute("uczelnia"));
 
             var list = new List<Student>();
+            var set = new HashSet<Student>();
             var st = new Student
             {
                 Imie = "jan",
@@ -37,6 +44,7 @@ namespace cw2
                 Email = "kowalski@wp.pl"
             };
             list.Add(st);
+            
             //...
             serializer.Serialize(writer, list);
             //stream.Dispose();//... IDisposable

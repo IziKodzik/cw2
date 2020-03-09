@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="data\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="data\dane.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

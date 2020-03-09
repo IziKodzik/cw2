@@ -1,5 +1,8 @@
-﻿using System;
+﻿using cw2.data.Models;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace cw2
 {
@@ -10,17 +13,33 @@ namespace cw2
             string file = "data/dane.csv";
 
             FileInfo f = new FileInfo(file);
-            StreamReader stream = new StreamReader(f.OpenRead());
-
-            string line = "";
-            while((line = stream.ReadLine())!= null)
+            using (StreamReader stream = new StreamReader(f.OpenRead()))
             {
-                Console.WriteLine(line);
+
+
+                string line = "";
+                while ((line = stream.ReadLine()) != null)
+                {
+                    string[] studentWiersz = line.Split(",");
+                    Console.WriteLine(line);
+                }
             }
 
+            FileStream writer = new FileStream(@"data.xml", FileMode.Create);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Student>), 
+                                            new XmlRootAttribute("uczelnia"));
 
-
-            stream.Dispose();//... IDisposable
+            var list = new List<Student>();
+            var st = new Student
+            {
+                Imie = "jan",
+                Nazwisko = "Kowalski",
+                Email = "kowalski@wp.pl"
+            };
+            list.Add(st);
+            //...
+            serializer.Serialize(writer, list);
+            //stream.Dispose();//... IDisposable
         }
     }
 }

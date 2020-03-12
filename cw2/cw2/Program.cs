@@ -22,10 +22,18 @@ namespace cw2
                 {
                     string[] studentWiersz = line.Split(",");
                     Console.WriteLine(line);
+
+                    Studia s = new Studia
+                    {
+                        nazwa = studentWiersz[2],
+                        tryb = studentWiersz[3],
+                    };
+
                     var stu = new Student
                     {
                         Imie = studentWiersz[0],
-                        Nazwisko = studentWiersz[0],
+                        Nazwisko = studentWiersz[1],
+                        stud = s,
                         Email = studentWiersz[0]
                     };
                 }
@@ -34,7 +42,8 @@ namespace cw2
             FileStream writer = new FileStream(@"data.xml", FileMode.Create);
             XmlSerializer serializer = new XmlSerializer(typeof(List<Student>), 
                                             new XmlRootAttribute("uczelnia"));
-
+            
+            
             var list = new List<Student>();
             var set = new HashSet<Student>();
             var st = new Student

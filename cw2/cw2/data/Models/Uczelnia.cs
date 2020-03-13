@@ -14,7 +14,10 @@ namespace cw2.data.Models
         [XmlAttribute(attributeName: "author")]
         public string autor { get; set; }
 
-        [XmlElement(elementName: "studenci")]
-        public List<Student> student { get; set; }
+        [XmlElement(elementName: "students")]
+        public Students student { get; set; }
+
+        [XmlElement(elementName: "activeStudies")]
+        public ActiveStudies activeStudies { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace cw2.data.Models
 {
-    public class Student
+    public class Student 
     {
         //prop + tabx2
         [XmlElement(elementName:"fname")]
@@ -17,7 +17,7 @@ namespace cw2.data.Models
         [XmlElement(elementName: "birthdate")]
         public string DataUrodzenia { get; set; }
 
-        [XmlAttribute(attributeName:"email")]
+        [XmlElement(elementName: "email")]
         public string Email { get; set; }
 
         [XmlElement(elementName: "mothersName")]
@@ -28,7 +28,13 @@ namespace cw2.data.Models
 
         [XmlElement(elementName: "studies")]
         public Studia stud { get; set; }
-        
+        [XmlAttribute(attributeName: "index")]
         public int index { get; set; }
+        override
+        public string ToString()
+        {
+            return index +" "+ Imie +" "+ Nazwisko;
+            
+        }
     }
 }

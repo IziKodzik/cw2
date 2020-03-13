@@ -2,7 +2,7 @@
 s18889 michał zieliński 13c
 
 # INFORMACJE O PROJEKCIE
--Plik wynikowy przy domyślnej konfiguracji pojawia się w "..\cw2\cw2\cw2\bin\Debug\netcoreapp2.2"
+- []Plik wynikowy przy domyślnej konfiguracji pojawia się w "..\cw2\cw2\cw2\bin\Debug\netcoreapp2.2"
 -Plik z danymi przy domyślnej konfiguracji należy umieścić w
 "..\cw2\cw2\cw2\data"
 -Plik logu "łog.txt" pojawia się w
